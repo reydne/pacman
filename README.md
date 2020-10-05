@@ -7,7 +7,7 @@ O objetivo desse projeto é construir um sistema multi-agente. Com isso foi dese
 
 
 ## Time
-|![Reydne]() <br>Reydne Bruno<br>rbs8@cin.ufpe.br|![Moisés]() <br>Moisés Neves<br><mnc3@cin.ufpe.br>| ![Ricardo]() <br>Ricardo Rodriges<br><rjrlf@cin.ufpe.br>
+|![Reydne](https://user-images.githubusercontent.com/28721925/95084810-c7466b80-06f4-11eb-85d4-b1e5bdce4099.jpg) <br>Reydne Bruno<br>rbs8@cin.ufpe.br|![Ricardo](https://user-images.githubusercontent.com/28721925/95084749-b1d14180-06f4-11eb-8202-164dc415c329.jpg) <br>Moisés Neves<br><mnc3@cin.ufpe.br>| ![moises](https://user-images.githubusercontent.com/28721925/95084795-c31a4e00-06f4-11eb-9787-33a5aa6c866f.jpg) <br>Ricardo Rodriges<br><rjrlf@cin.ufpe.br>
 |-|-|-|
 
 ## Descrição do Sistema 
