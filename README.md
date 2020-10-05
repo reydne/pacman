@@ -16,7 +16,7 @@ O objetivo desse projeto é construir um sistema multi-agente. Com isso foi dese
 (Referências: https://en.wikipedia.org/wiki/List_of_Pac-Man_video_games)
 
 ### Componentes do Sistema 
-    O sistema sistema contido nesse repositório tem os seguintes componentes:  
+  O sistema sistema contido nesse repositório tem os seguintes componentes:  
 
 
 ## Links Úteis
