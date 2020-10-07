@@ -1,5 +1,5 @@
 /**
-  * all different types of tiles
+  * todos os diferentes tipos de peças
   */
 const TYPES = [
   "BARRIER",
@@ -10,19 +10,19 @@ const TYPES = [
   "PACMAN"
 ];
 
-const TILE_SPEED = 0.2; // speed of tile's movement
+const TILE_SPEED = 0.2; // velocidade de movimento do ladrilho
 
-const DIMENSIONS = 20;  // size of field
+const DIMENSIONS = 20;  // tamanho do campo
 
-const SIZE = 25;  // size of each tile
+const SIZE = 25;  // tamanho de cada telha
 const HALF_SIZE = SIZE / 2;
 const THIRD_SIZE = SIZE / 3;
 const QUARTER_SIZE = SIZE / 4;
 
 /**
- * makes up the field
- * tiles can be moved
- * tiles can restrict movement
+ * compõe o campo
+ * as telhas podem ser movidas
+ * os ladrilhos podem restringir o movimento
  */
 function Tile(x, y, type, behavior) {
 
@@ -37,7 +37,7 @@ function Tile(x, y, type, behavior) {
 
   this.speed = 0.2;
 
-  this.behavior = behavior; // GHOSTs only;  0 = agressive, 1 = nonchalant
+  this.behavior = behavior; // apenas fantasmas;  0 = agressivo, 1 = indiferente
 }
 
 /**
