@@ -1,6 +1,7 @@
 | [Home]() | [Time](https) | [Descrição](/artefatos/) | [Links]() |
 |-|-|-|-|
 
+## Descrição do Sistema 
 ### Descrição do domínio
 
 O domínio ao qual esse sistema multiagente será construído é um videogame de caça ao labirinto. Onde o jogador controla o personagem (Pac-Man) homônimo através de um labirinto fechado. O objetivo do jogo é comer todos os pontos colocados no labirinto, evitando quatro fantasmas coloridos - Blinky (vermelho), Pinky (rosa), Inky (ciano) e Clyde (laranja) - que o perseguem. Quando todos os pontos são comidos, o jogador avança para o próximo nível. Se Pac-Man fizer contato com um fantasma, ele perderá uma vida;
@@ -20,15 +21,6 @@ Por se tratar de um sistema multiagente, esse sistema tem duas categorias de age
 ## Time
 |![Reydne](https://user-images.githubusercontent.com/28721925/95084810-c7466b80-06f4-11eb-85d4-b1e5bdce4099.jpg) <br>Reydne Bruno<br>rbs8@cin.ufpe.br|![Moisés](https://user-images.githubusercontent.com/28721925/95085952-438d7e80-06f6-11eb-9fe2-d7dbd88a1393.jpg) <br>Moisés Neves<br><mnc3@cin.ufpe.br>| ![Ricardo](https://user-images.githubusercontent.com/28721925/95084749-b1d14180-06f4-11eb-8202-164dc415c329.jpg) <br>Ricardo Rodriges<br><rjrlf@cin.ufpe.br>
 |-|-|-|
-
-## Descrição do Sistema 
-### Pac-Man
-  O pac-man originalmente é um jogo de arcade lançado inicialmente no ano de 1980. Esse jogo tem como objetivo simular um labirinto com agentes de perseguição.   
-(Referências: https://en.wikipedia.org/wiki/List_of_Pac-Man_video_games)
-
-### Componentes do Sistema 
-  O sistema sistema contido nesse repositório tem os seguintes componentes:  
-
 
 ## Links Úteis
 - [Implementação Pac-Man em P5](https://www.youtube.com/watch?v=gz9kNwwglsc&t=8172s&ab_channel=Kaelinator)
