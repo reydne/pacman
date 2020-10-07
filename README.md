@@ -3,7 +3,12 @@
 
 
 ### Objetivo
-O objetivo desse projeto é construir um sistema multi-agente. Com isso foi desenvolvido uma replica do famoso jogo de  arcade Pac-Man.
+Por se tratar de um sistema multiagente, esse sistema tem duas categorias de agentes: agentes chamados de pac-man e agentes chamados de fantasmas. O objetivo desse sistema é simular um jogo de arcade chamado Pac-man. Dito isto, os objetivos de cada agentes são:
+
+  Pac-man: Percorrer todo o labirinto capturando todos os alimentos disponíveis no ambiente, podendo desviar dos obstáculos e desviar dos fantasmas.
+
+  Fantasmas: Percorrer o ambiente, desviar dos obstáculos em busca de capturar o Pac-man. 
+
 
 
 ## Time
