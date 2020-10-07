@@ -1,6 +1,6 @@
 
 /*
-Esse código é uma adaptado de https://www.youtube.com/watch?v=gz9kNwwglsc&t=8172s&ab_channel=Kaelinator
+Esse código é uma adaptação de https://www.youtube.com/watch?v=gz9kNwwglsc&t=8172s&ab_channel=Kaelinator
  * 2D map of the field;
  * 0 = BARRIER
  * 1 = BISCUIT
@@ -46,9 +46,9 @@ function setup() {
 
 function draw() {
   background(51);
-  drawHUD(); // field & score
+  drawHUD(); // campos & pontuação
 
-  /* update and draw ghosts */
+  /* atualiza e desenha os fantamas */
   for (var j = 0; j < ghosts.length; j++) {
     ghosts[j].update();
     ghosts[j].draw();
@@ -60,7 +60,7 @@ function draw() {
 }
 
 /**
- *  handles user input
+ *  lida com a entrada do usuário
  */
 function handleInput() {
 
@@ -80,12 +80,12 @@ function handleInput() {
 }
 
 /**
- * draws all tiles except types GHOST and PACMAN
- * draws score
+ * desenha todas as peças, exceto os tipos FANTASMA e PACMAN
+ * empates pontuação
  */
 function drawHUD() {
 
-  /* field */
+  /* campo */
   for (var i = 0; i < field.length; i++) {
 
     if (field[i].intact) {
@@ -95,7 +95,7 @@ function drawHUD() {
     }
   }
 
-  /* score */
+  /* Pontuação */
   noStroke();
   fill(255);
   textSize(30);
@@ -125,19 +125,19 @@ function endGame(won) {
 }
 
 /**
- *  populates field and ghost arrays
- * initializes Pac-man
- * based upon FIELD constant
+ * preenche arrays de campo e fantasma
+ * inicializa o Pac-man
+ * com base na constante FIELD
  */
 function generateField() {
 
-  var f = []; // returning array
+  var f = []; // retorna array
 
-  var ghostId = 0; // handling behavior of ghost
-  for (var i = 0; i < FIELD.length; i++) { // loop through each string
+  var ghostId = 0; // tratamento do comportamento do fantasma
+  for (var i = 0; i < FIELD.length; i++) { // loop por cada corda string
 
     var row = FIELD[i].split(",");
-    for (var j = 0; j < row.length; j++) { // loop through numbers in string
+    for (var j = 0; j < row.length; j++) { // percorrer os números na string
 
       var type = TYPES[row[j]];
       var tile = new Tile(j, i, type, -1);
@@ -150,7 +150,7 @@ function generateField() {
           break;
 
         case "GHOST":
-          var behavior = (ghostId % 2); // every other ghost will be agressive
+          var behavior = (ghostId % 2); // todos os outros fantasmas serão agressivos
           ghosts.push(new Tile(j, i, type, behavior));
           f.push(new Tile(j, i, "OPEN"));
           ghostId++;
@@ -161,12 +161,12 @@ function generateField() {
           break;
 
         case "CHERRY":
-          endScore += 10; // worth 10 points
+          endScore += 10; // vale 10 pontos
           f.push(tile);
           break;
 
         case "BISCUIT":
-          endScore++; // worth 1 point
+          endScore++; // vale 1 ponto
           f.push(tile);
           break;
       }

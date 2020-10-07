@@ -41,14 +41,14 @@ function Tile(x, y, type, behavior) {
 }
 
 /**
- *  handles movement, eating, and AI
+ *  lida com movimento, alimentação e IA
  */
 Tile.prototype.update = function() {
 
-  if (!this.intact) // no need to update
+  if (!this.intact) // não há necessidade de atualizar
     return;
 
-  /* movement */
+  /* movimento */
   if (this.moving) {
 
     console.log(this.x, this.y, "antes de lerp");
@@ -62,19 +62,19 @@ Tile.prototype.update = function() {
     var distanceX = Math.abs(this.x - this.destination.x);
     var distanceY = Math.abs(this.y - this.destination.y);
 
-    if (distanceX < 0.1 && distanceY < 0.1) { // round to the nearest position
+    if (distanceX < 0.1 && distanceY < 0.1) { // arredondar para a posição mais próxima
 
       this.x = this.destination.x;
       this.y = this.destination.y;
 
-      this.moving = false; // done moving
+      this.moving = false; // feito de mudança
     }
   }
 
   /* eating */
-  if (this.type == "PACMAN") { // only PACMAN may eat!
+  if (this.type == "PACMAN") { // apenas PACMAN pode comer!
 
-    // Tile to which Pac-man is moving
+    // Bloco para o qual o Pac-man está se movendo
     var destinationTile = getTile(Math.floor(this.x), Math.floor(this.y));
 
     if (destinationTile.intact) {
@@ -82,33 +82,33 @@ Tile.prototype.update = function() {
       switch (destinationTile.type) {
 
         case "BISCUIT":
-          score++;  // worth 1 point
+          score++;  // Vale 1 ponto
           destinationTile.intact = false;
           break;
 
         case "CHERRY":
-          score += 10;  // worth 10 points
+          score += 10;  // vale 10 pontos
           destinationTile.intact = false;
           break;
       }
     }
 
-    if (score == endScore) // check if Pac-man has won
+    if (score == endScore) // verifique se o Pac-man ganhou
       endGame(true);
 
   } else if (this.type == "GHOST") {
-    /* GHOST AI */
+    /* AI fantasmas */
 
     var distance = dist(pacman.x, pacman.y, this.x, this.y);
 
-    if (distance < 0.3) // if Pac-man has touched a GHOST
+    if (distance < 0.3) // se Pac-man tocou em um FANTASMA
       endGame(false);
 
-    /* movement */
-    if (this.moving) // can't move multiple times at once
+    /* movimentos */
+    if (this.moving) // não pode se mover várias vezes ao mesmo tempo
       return;
 
-    /* relative possible movements */
+    /* movimentos possíveis relativos */
     var possibleMoves = [
 
       getTile(this.x - 1, this.y),  // left
@@ -117,7 +117,7 @@ Tile.prototype.update = function() {
       getTile(this.x, this.y + 1),  // bottom
     ];
 
-    /* sort by distance from Pac-man */
+    /* classificar por distância do Pac-man */
     possibleMoves.sort(function (a, b) {
 
       var aD = dist(a.x, a.y, pacman.x, pacman.y);
@@ -126,16 +126,16 @@ Tile.prototype.update = function() {
       return aD - bD;
     });
 
-    if (this.behavior === 0) {  // if they're agressive
+    if (this.behavior === 0) {  // se eles são agressivos
 
       for (var i = 0; i < possibleMoves.length; i++) {
 
-        if (this.move(possibleMoves[i].x, possibleMoves[i].y, false)) { // attempt to move
+        if (this.move(possibleMoves[i].x, possibleMoves[i].y, false)) { // tentativa de mover
           break;
         }
       }
     } else {
-      // move nonchalantly
+      // mova-se com indiferença
       var index = Math.floor(random(4));
       this.move(possibleMoves[index].x, possibleMoves[index].y, false);
     }
@@ -178,7 +178,7 @@ Tile.prototype.draw = function() {
       stroke(0);
       strokeWeight(1);
 
-      /* draw a triangle */
+      /* desenhe um triângulo */
       beginShape();
       vertex(this.x * SIZE + HALF_SIZE, this.y * SIZE + QUARTER_SIZE);
       vertex(this.x * SIZE + QUARTER_SIZE, this.y * SIZE + (QUARTER_SIZE * 3));
@@ -200,14 +200,14 @@ Tile.prototype.draw = function() {
 };
 
 /**
- * calculates movement for use within update function
- * returns whether it's a valid move or not
+ * Calcula o movimento para usar dentro da função de atualização 
+ * Retorna se é um movimento válido ou não
  */
 Tile.prototype.move = function(x, y, relative) {
 
   var destinationX, destinationY;
 
-  if (relative) { // relative to the tile
+  if (relative) { // em relação ao azulejo
 
     destinationX = this.x + x;
     destinationY = this.y + y;
@@ -217,25 +217,25 @@ Tile.prototype.move = function(x, y, relative) {
     destinationY = y;
   }
 
-  if (this.moving) // no need to recalculate everything
+  if (this.moving) // não há necessidade de recalcular tudo
     return false;
 
   var destinationTile = getTile(destinationX, destinationY);
 
   var type = destinationTile.type;
 
-  if ((type == "BARRIER" && this.type != "BARRIER") ||   // only certain tiles may
-      (type == "GHOST" && this.type == "GHOST"))         // move to other certain tiles
+  if ((type == "BARRIER" && this.type != "BARRIER") ||   // apenas algumas peças podem
+      (type == "GHOST" && this.type == "GHOST"))         // mover para outras peças certas
     return false;
 
-  this.moving = true; // begin movement next update
+  this.moving = true; // começar o movimento próxima atualização
   this.destination = createVector(destinationX, destinationY);
 
   return true;
 };
 
 /**
- * returns tile with coordinates (x, y)
+ * retorna a peça com coordenadas (x, y)
  */
 function getTile(x, y) {
 
