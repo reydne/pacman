@@ -151,7 +151,7 @@ Tile.prototype.draw = function() {
 
       strokeWeight(5);
       stroke(0);
-      fill("#0000FF");
+      fill("#191970");
       rect(this.x * SIZE, this.y * SIZE, SIZE, SIZE);
       break;
 
